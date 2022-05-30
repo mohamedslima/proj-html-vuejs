@@ -25,11 +25,12 @@
               :class="{ active: item.active }"
             >
               <a href="#" :class="{ active: item.active }"> {{ item.text }}</a>
+              <span class="new_box" :class="{ new: item.new }">NEW</span>
             </li>
           </ul>
         </div>
-        <div>
-          <button>Clicca</button>
+        <div class="header_button_container">
+          <button class="header_button">BOOK NOW</button>
         </div>
       </div>
     </div>
@@ -46,31 +47,37 @@ export default {
           url: "#",
           text: "HOME",
           active: false,
+          new: false,
         },
         {
           url: "#",
           text: "ABOUT",
           active: false,
+          new: false,
         },
         {
           url: "#",
           text: "PRICES",
           active: false,
+          new: false,
         },
         {
           url: "#",
           text: "COURSES",
           active: false,
+          new: true,
         },
         {
           url: "#",
           text: "LOCATIONS",
           active: false,
+          new: false,
         },
         {
           url: "#",
           text: "BLOG",
           active: false,
+          new: false,
         },
       ],
     };
@@ -81,8 +88,8 @@ export default {
         this.linksHeader[index].active = false;
       });
       this.linksHeader[index].active = !this.linksHeader[index].active;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -114,17 +121,20 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      // styling list 
       div.header_list {
         ul {
           list-style: none;
           display: flex;
           li {
             margin-right: 2rem;
+            display: flex;
             &.active,
             &:hover {
               border-bottom: 3px solid #85b680;
               color: #85b680;
-              padding-bottom: .6rem;
+              padding-bottom: 0.6rem;
+              transition: 0.5s;
             }
             a {
               text-decoration: none;
@@ -133,8 +143,39 @@ header {
               &.active,
               &:hover {
                 color: #85b680;
+                transition: 0.5s;
               }
             }
+            span.new_box {
+              display: none;
+              background-color: #85b680;
+              color: white;
+              font-size: .8rem;
+              font-weight: bold;
+              padding: .2rem;
+              margin-left: .5rem;
+              border-radius: .2rem;
+              &.new {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      // Button styling css set
+      div.header_button_container {
+        button.header_button {
+          background-color: $button-green-bg;
+          color: $button-white-text;
+          border: $button-border-green;
+          font-weight: $button-weight-bold;
+          cursor: $button-pointer;
+          border-radius: $button-radius;
+          padding: .8rem 1.5rem;
+          &:hover {
+            color: $button-green-text;
+            background-color: $button-white-bg;
+            transition: 0.5s;
           }
         }
       }
