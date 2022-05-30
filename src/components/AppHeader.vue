@@ -1,21 +1,36 @@
 <template>
   <header>
     <div class="header_info">
-      <div>We have a 95% Successful Pass Rate</div>
-      <div>
-        <i class="fas fa-phone"></i>
-        Give us a call to book your tuition! 1-800-555-555
+      <div class="header_info_width">
+        <div>We have a 95% Successful Pass Rate</div>
+        <div>
+          <i class="fas fa-phone"></i>
+          Give us a call to book your tuition! 1-800-555-555
         </div>
+      </div>
     </div>
     <div class="header_menu">
-      <div>
-        <img src="" alt="">
-      </div>
-      <div>
-
-      </div>
-      <div>
-
+      <div class="header_menu_width">
+        <div>
+          <img
+            src="../assets/images/avada-drivers-logo-2x-300x58.png"
+            alt="header-image-logo"
+          />
+        </div>
+        <div class="header_list">
+          <ul>
+            <li
+              v-for="(item, index) in linksHeader"
+              :key="index"
+              :class="{ active: item.active }"
+            >
+              <a href="#" :class="{ active: item.active }"> {{ item.text }}</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button>Clicca</button>
+        </div>
       </div>
     </div>
   </header>
@@ -23,58 +38,107 @@
 
 <script>
 export default {
-    name: "AppHeader",
-    data: function () {
-      return {
-        linksheader: [
-          {
-            url: "#",
-            text: "HOME",
-            new: false,
-          },
-          {
-            url: "#",
-            text: "ABOUT",
-            new: false,
-          },
-          {
-            url: "#",
-            text: "PRICES",
-            new: false,
-          },
-          {
-            url: "#",
-            text: "COURSES",
-            new: true,
-          },
-          {
-            url: "#",
-            text: "LOCATIONS",
-            new: false,
-          },
-          {
-            url: "#",
-            text: "BLOG",
-            new: false,
-          },
-        ]
-      }
+  name: "AppHeader",
+  data: function () {
+    return {
+      linksHeader: [
+        {
+          url: "#",
+          text: "HOME",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "ABOUT",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "PRICES",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "COURSES",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "LOCATIONS",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "BLOG",
+          active: false,
+        },
+      ],
+    };
+  },
+  methods: {
+    isActive: function (index) {
+      this.linksHeader.forEach((item, index) => {
+        this.linksHeader[index].active = false;
+      });
+      this.linksHeader[index].active = !this.linksHeader[index].active;
     }
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
+@import "../style/variables.scss";
 
 header {
   div.header_info {
     height: 40px;
     background-color: #484848;
     color: #a1a5ae;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    div.header_info_width {
+      width: $general-content-width;
+      margin: $general-content-margin;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  div.header_menu {
+    height: 110px;
+    background-color: #48484860;
+    display: flex;
+    div.header_menu_width {
+      width: $general-content-width;
+      margin: $general-content-margin;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div.header_list {
+        ul {
+          list-style: none;
+          display: flex;
+          li {
+            margin-right: 2rem;
+            &.active,
+            &:hover {
+              border-bottom: 3px solid #85b680;
+              color: #85b680;
+              padding-bottom: .6rem;
+            }
+            a {
+              text-decoration: none;
+              color: white;
+              font-weight: bold;
+              &.active,
+              &:hover {
+                color: #85b680;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
-
 </style>
