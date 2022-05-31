@@ -11,7 +11,7 @@
     </div>
     <div class="header_menu">
       <div class="header_menu_width">
-        <div>
+        <div class="image_header_container">
           <img
             src="../assets/images/avada-drivers-logo-2x-300x58.png"
             alt="header-image-logo"
@@ -115,13 +115,23 @@ header {
     height: 110px;
     background-color: #48484860;
     display: flex;
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 70px 0;
     div.header_menu_width {
       width: $general-content-width;
       margin: $general-content-margin;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      // styling list 
+
+      div.image_header_container {
+        img {
+          width: 70%;
+        }
+      }
+      // styling list
       div.header_list {
         ul {
           list-style: none;
@@ -150,11 +160,11 @@ header {
               display: none;
               background-color: #85b680;
               color: white;
-              font-size: .8rem;
+              font-size: 0.8rem;
               font-weight: bold;
-              padding: .2rem;
-              margin-left: .5rem;
-              border-radius: .2rem;
+              padding: 0.2rem;
+              margin-left: 0.5rem;
+              border-radius: 0.2rem;
               &.new {
                 display: block;
               }
@@ -171,7 +181,7 @@ header {
           font-weight: $button-weight-bold;
           cursor: $button-pointer;
           border-radius: $button-radius;
-          padding: .8rem 1.5rem;
+          padding: 0.8rem 1.5rem;
           &:hover {
             color: $button-green-text;
             background-color: $button-white-bg;
