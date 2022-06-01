@@ -127,6 +127,7 @@ div.jumbotron_container {
               border: 1px solid gray;
               border-radius: 5px;
             }
+            ::-webkit-input-placeholder { font-size: .8rem; padding-left: 1rem; color: rgba(128, 128, 128, 0.65); font-style:italic;}
             button {
               margin-top: 1rem;
               background-color: $button-green-bg;

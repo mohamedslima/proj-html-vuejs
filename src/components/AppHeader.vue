@@ -158,11 +158,14 @@ header {
             }
             span.new_box {
               display: none;
+              padding-top: .3rem;
               background-color: #85b680;
               color: white;
-              font-size: 0.8rem;
+              font-size: 0.7rem;
               font-weight: bold;
-              padding: 0.2rem;
+              height: 1.5rem;
+              width: 2.5rem;
+              text-align: center;
               margin-left: 0.5rem;
               border-radius: 0.2rem;
               &.new {
