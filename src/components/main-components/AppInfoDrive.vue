@@ -28,7 +28,46 @@
             </div>
           </div>
         </div>
-        <div></div>
+        <div class="course_plus_info_container">
+          <div class="plus_info_card">
+            <img
+              src="../../assets/images/courses-passplus.jpg"
+              alt="img-info-1"
+            />
+            <span>Pass Plus</span>
+            <button>LEARN MORE</button>
+          </div>
+          <div class="plus_info_card">
+            <img
+              src="../../assets/images/courses-passplus.jpg"
+              alt="img-info-2"
+            />
+            <span>Intensive Course</span>
+            <button>LEARN MORE</button>
+          </div>
+          <div class="plus_info_card">
+            <img
+              src="../../assets/images/courses-passplus.jpg"
+              alt="img-info-3"
+            />
+            <span>Instructors</span>
+            <button>LEARN MORE</button>
+          </div>
+        </div>
+      </div>
+      <div class="rating_container">
+        <div class="rating_card">
+          <div class="circle_rating first">95%</div>
+          <div class="rating_text">PASS RATE</div>
+        </div>
+        <div class="rating_card">
+          <div class="circle_rating second">100%</div>
+          <div class="rating_text">REFFERAL RATE</div>
+        </div>
+        <div class="rating_card">
+          <div class="circle_rating third">0%</div>
+          <div class="rating_text">ACCIDENT RATE</div>
+        </div>
       </div>
     </div>
   </div>
@@ -74,6 +113,7 @@ div.app_info_container {
     div.course_app_width {
       width: $general-content-width;
       margin: $general-content-margin;
+      display: flex;
       div.course_card_container {
         div.course_card {
           background-color: white;
@@ -122,6 +162,82 @@ div.app_info_container {
               }
             }
           }
+        }
+      }
+      div.course_plus_info_container {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 2.5rem;
+        div.plus_info_card {
+          width: calc(100% / 3);
+          height: 40px;
+          margin-top: 5rem;
+          text-align: center;
+          img {
+            width: 13rem;
+          }
+          span {
+            font-size: 1rem;
+            color: #7f9ea8;
+            font-weight: bold;
+            line-height: 2rem;
+          }
+          button {
+            border: 2px solid #7f9ea8;
+            display: block;
+            margin-left: 3.5rem;
+            margin-top: 0.5rem;
+            background-color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #7f9ea8;
+            &:hover {
+              border: 2px solid #85b680;
+              color: #85b680;
+              transition: 0.5s;
+            }
+          }
+        }
+      }
+    }
+    div.rating_container {
+      display: flex;
+      justify-content: space-evenly;
+      width: $general-content-width;
+      margin: $general-content-margin;
+      div.rating_card {
+          margin-top: 3rem;
+        width: calc(100% / 3 - 15px);
+        height: 28rem;
+        border-radius: 10px;
+        border-top: 6px solid #85b680;
+        box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+        div.circle_rating {
+          height: 200px;
+          width: 200px;
+          margin: 0 auto;
+          border-radius: 50%;
+          border: 8px solid #e5e8eb;
+          text-align: center;
+          padding: 70px;
+          color: #3f4843c0;
+          font-size: 2rem;
+          margin-top: 3rem;
+        }
+        div.circle_rating.first {
+          border-top: 8px solid #85b680;
+          border-right: 8px solid #85b680;
+          border-bottom: 8px solid #85b680;
+        }
+        div.circle_rating.second {
+          border: 8px solid #85b680;
+          padding: 70px 60px;
+        }
+        div.rating_text {
+          color: #3f4843c0;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 2rem;
         }
       }
     }
